@@ -38,7 +38,6 @@ import java.net.URISyntaxException;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.UUID;
-import Manager;
 
 public class TouchDrawActivity extends Activity {
     public static final String DRAWING_RESULT_PARCELABLE = "drawing_result";
@@ -83,7 +82,7 @@ public class TouchDrawActivity extends Activity {
         if (intentExtras != null) {
             mBackgroundImageType = BackgroundImageType.values()[
                     intentExtras.getInt(BACKGROUND_IMAGE_TYPE, BackgroundImageType.COLOUR.ordinal())];
-                    
+
             //mBackgroundImageUrl = intentExtras.getString(BACKGROUND_IMAGE_URL, mBackgroundImageUrl);
             mBackgroundImageUrl = Manager.getInstance().inputData;
             

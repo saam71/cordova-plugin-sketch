@@ -1,18 +1,14 @@
-class Manager 
-{ 
-    private static Manager instance = null; 
-    public String inputData; 
-    
-    private Manager() 
-    { 
-        inputData = null; 
-    } 
-    
-    public static Manager getInstance() 
-    { 
-        if (instance == null) 
-            instance = new Manager();
+package au.com.blinkmobile.cordova.sketch;
 
-        return instance; 
-    } 
+public class Manager {
+    private static final Manager instance = new Manager();
+    public String inputData;
+
+    public static Manager getInstance() {
+        return instance;
+    }
+
+    private Manager() {
+        inputData = null;
+    }
 }
