@@ -1,0 +1,18 @@
+class Manager 
+{ 
+    private static Manager instance = null; 
+    public String base64Image; 
+    
+    private Manager() 
+    { 
+        base64Image = ""; 
+    } 
+    
+    public static Manager getInstance() 
+    { 
+        if (instance == null) 
+            instance = new Manager(); 
+  
+        return instance; 
+    } 
+}
