@@ -38,6 +38,7 @@ import java.net.URISyntaxException;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.UUID;
+import au.com.blinkmobile.cordova.sketch.Manager;
 
 public class TouchDrawActivity extends Activity {
     public static final String DRAWING_RESULT_PARCELABLE = "drawing_result";
