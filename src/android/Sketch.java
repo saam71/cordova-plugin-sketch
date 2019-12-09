@@ -28,7 +28,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.UUID;
-import au.com.blinkmobile.cordova.sketch.Manager;
 
 /**
  * Created by jt on 29/03/16.
