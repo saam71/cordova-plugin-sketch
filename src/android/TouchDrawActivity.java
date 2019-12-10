@@ -234,11 +234,14 @@ public class TouchDrawActivity extends Activity {
                     mPaint.setColor(STROKE_COLOUR_VALUES[position]);
 
                     adapterView.setBackgroundColor(STROKE_COLOUR_VALUES[position]);
-                    TextView v = ((TextView) view).setText(strokeColourLabelPrefix + STROKE_COLOUR_LABELS[position]);
+                    
+                    TextView tv = ((TextView) view);
+                    tv.setText(strokeColourLabelPrefix + STROKE_COLOUR_LABELS[position]);
+                    
                     if(position == 3){
-                        v.setTextColor(Color.WHITE);
+                        tv.setTextColor(Color.WHITE);
                     }else{
-                        v.setTextColor(Color.BLACK);
+                        tv.setTextColor(Color.BLACK);
                     }
                 }
             }
