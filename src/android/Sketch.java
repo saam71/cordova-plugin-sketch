@@ -148,7 +148,7 @@ public class Sketch extends CordovaPlugin {
                     touchDrawIntent.putExtra(TouchDrawActivity.BACKGROUND_IMAGE_TYPE,
                             TouchDrawActivity.BackgroundImageType.DATA_URL.ordinal());
                 } else if (Sketch.this.inputType == InputType.FILE_URI) {
-                    Uri inputUri = Uri.parse(this.inputData);
+                    Uri inputUri = Uri.parse(inputData);
                     String scheme = (inputUri != null && inputUri.getScheme() != null) ? inputUri.getScheme() : "";
 
                     if (scheme.equals(ContentResolver.SCHEME_CONTENT)) {
@@ -182,7 +182,7 @@ public class Sketch extends CordovaPlugin {
 
                                 //Sketch.this.inputData = "file://" + file.getAbsolutePath();
                                 
-                                this.inputData = "file://" + file.getAbsolutePath();
+                                Sketch.this.inputData = "file://" + file.getAbsolutePath();
                                 
                                 touchDrawIntent.putExtra(TouchDrawActivity.BACKGROUND_IMAGE_TYPE,
                                         TouchDrawActivity.BackgroundImageType.FILE_URL.ordinal());
@@ -208,14 +208,14 @@ public class Sketch extends CordovaPlugin {
                         touchDrawIntent.putExtra(TouchDrawActivity.BACKGROUND_IMAGE_TYPE,
                                 TouchDrawActivity.BackgroundImageType.FILE_URL.ordinal());
                     } else {
-                        String message = "invalid scheme for inputData: " + this.inputData;
-                        File file = new File(this.inputData);
+                        String message = "invalid scheme for inputData: " + inputData;
+                        File file = new File(inputData);
 
                         LOG.d(TAG, message);
                         if (file.exists() && !file.isDirectory()) {
                             touchDrawIntent.putExtra(TouchDrawActivity.BACKGROUND_IMAGE_TYPE,
                                     TouchDrawActivity.BackgroundImageType.FILE_URL.ordinal());
-                                    this.inputData = "file://" + file.getAbsolutePath();
+                                    inputData = "file://" + file.getAbsolutePath();
                         } else {
                             Sketch.this.callbackContext.error(message);
                             return;
@@ -233,7 +233,7 @@ public class Sketch extends CordovaPlugin {
 
                 touchDrawIntent.putExtra(TouchDrawActivity.DRAWING_RESULT_TEMP_PATH, Sketch.this.cordova.getActivity().getCacheDir());
 
-                //touchDrawIntent.putExtra(TouchDrawActivity.BACKGROUND_IMAGE_URL, inputData);
+                touchDrawIntent.putExtra(TouchDrawActivity.BACKGROUND_IMAGE_URL, inputData);
                 Sketch.this.cordova.getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
