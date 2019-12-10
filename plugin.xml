@@ -65,7 +65,7 @@
             <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
         </config-file>
 
-        <source-file src="src/android/SingleManager.java"
+        <source-file src="src/android/Manager.java"
             target-dir="src/au/com/blinkmobile/cordova/sketch" />
 
         <source-file src="src/android/Sketch.java"
