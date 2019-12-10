@@ -1,14 +1,10 @@
 package au.com.blinkmobile.cordova.sketch;
 
 public class Manager {
-    private static final Manager instance = new Manager();
+    private static final Manager SINGLE_INSTANCE = new Manager();
     public String inputData;
 
-    public static Manager getInstance() {
-        return instance;
-    }
+    public static Manager getInstance() { return SINGLE_INSTANCE;}
 
-    private Manager() {
-        inputData = "";
-    }
+    private Manager() { inputData = null; }
 }

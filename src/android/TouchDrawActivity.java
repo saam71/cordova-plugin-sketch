@@ -80,10 +80,7 @@ public class TouchDrawActivity extends Activity {
         Bundle intentExtras = getIntent().getExtras();
 
         if (intentExtras != null) {
-            mBackgroundImageType = BackgroundImageType.values()[
-                    intentExtras.getInt(BACKGROUND_IMAGE_TYPE, BackgroundImageType.COLOUR.ordinal())];
-
-            //mBackgroundImageUrl = intentExtras.getString(BACKGROUND_IMAGE_URL, mBackgroundImageUrl);
+            mBackgroundImageType = BackgroundImageType.values()[intentExtras.getInt(BACKGROUND_IMAGE_TYPE, BackgroundImageType.COLOUR.ordinal())];
             
             mBackgroundImageUrl = Manager.getInstance().inputData;
             
