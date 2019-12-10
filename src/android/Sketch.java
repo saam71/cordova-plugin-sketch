@@ -62,7 +62,7 @@ public class Sketch extends CordovaPlugin {
                 callbackContext.error("Invalid destinationType");
                 return false;
             }
-
+            
             opt = options.getInt("encodingType");
             if (opt >= 0 && opt < EncodingType.values().length) {
                 this.encodingType = EncodingType.values()[opt];
@@ -88,6 +88,7 @@ public class Sketch extends CordovaPlugin {
                 }
                 
                 this.inputData = inputData;
+                String test = Manager.getInstance().inputData;
             } else {
                 this.inputData = null;
             }
