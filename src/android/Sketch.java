@@ -86,9 +86,7 @@ public class Sketch extends CordovaPlugin {
                     callbackContext.error("input data not given");
                     return false;
                 }
-                //this.inputData = inputData;
                 
-                //Singleton
                 Manager.getInstance().inputData = inputData;
             } else {
                 Manager.getInstance().inputData = null;
