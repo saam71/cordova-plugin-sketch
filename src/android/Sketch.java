@@ -88,7 +88,7 @@ public class Sketch extends CordovaPlugin {
                 }
                 
                 this.inputData = inputData;
-                String test = Manager.getInstance().inputData;
+                String test = SingleManager.getInstance().inputData;
             } else {
                 this.inputData = null;
             }
