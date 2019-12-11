@@ -2,6 +2,8 @@
 
 This plugin defines a navigator.Sketch object, which supplies an interface to launch a sketch pad, allowing the user to draw something or annotate a picture.
 
+# New: the limitation on android when passing the image to the activity, crashing the app, has been solved.
+
 ## Installation
 
 ```sh
